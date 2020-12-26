@@ -1,0 +1,77 @@
+#%RAML 1.0
+version: v1
+title: Accounts API
+
+types:
+  Account: !include solution/account.raml
+
+/accounts:
+  get:
+    displayName: Get all accounts
+    description: Retrieves a list of all accounts based on query parameters
+    headers:
+      Requester-ID:
+        displayName: Requester ID
+        description: id of the person requesting the account information
+        type: string
+        required: true
+        default: ReqId1234
+    queryParameter:
+      type:
+        type: string
+        required: true
+        enum:
+          - PERSONAL
+          - BUSINESS
+      name:
+        type: string
+        required: false
+      country:
+        type: string
+        required: false
+    response:
+      200:
+        body:
+          application/json:
+            type: Account[]
+            examples:
+              account:
+                ID: 1234
+                firstName: Tom
+                lastName: DeLonge
+                address: Don't know
+                postal: 93210
+                country: USA
+                miles: 100
+                creationDate: 2020/12/26
+                type: Main
+      400:
+        body:
+          application/json:
+            example:
+              message: Error retrieving data from the Account database
+
+  post:
+    displayName: Add Account
+    description: Add a new account to the system
+    headers:
+      Requester-ID:
+        displayName: Requester ID
+        description: id of the person requesting the account information
+        type: string
+        required: true
+    body:
+      application/json:
+        type: Account[]
+    responses:
+      201:
+        body:
+          application/json:
+            example:
+              message: Account created
+      400:
+        body:
+          application/json:
+            example:
+              message: Invalid payload
+    
