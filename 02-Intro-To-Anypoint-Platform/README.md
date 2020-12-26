@@ -20,8 +20,8 @@
 
 ## MuleSoft blueprint
 
-| :---- | :----: | :----: | :----: | :----: |
 |       | **Plan for success** | **Establish the foundation** | **Build to scale** | **Measure impact** |
+| :---- | :----: | :----: | :----: | :----: |
 | **Business outcome** | Agree on business outcomes and KPIs; Develop the overall success plan | Monitor and manage | Refresh the success plan | Measure business outcomes |
 | **Technology delivery** | Define anypoint platform vision and roadmap; Design Anypoint platform architecture and implementation plan | Deploy Anypoint Platform | Refine and scale Anypoint Platform | Measure Anypoint platform KPIs |
 | **Technology delivery** | Prioritise IT projects and quick wins; Staff and onboard the project teams | Define reference architecture; Launch initial projects and quick wins | Onboard additional project teams; Launch additional projects | Measure project KPIs |
