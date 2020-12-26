@@ -1,0 +1,31 @@
+#%RAML 1.0
+title: American Flights API
+
+types:
+  AmericanFlight: !include /exchange_modules/AmericanFlightDataType.raml #this will look different in Design Center, here's a simplified version for training purposes
+
+/flights:
+  get:
+    queryParameters:
+      destination:
+        requred: false
+        enum:
+          - SFO
+          - LAX
+          - CLE
+    responses:
+      200:
+        body:
+          application/json:
+            type: AmericanFlight[]
+            examples: #can be defined in Design Center
+              output: !include /exchange_modules/ExampleResp.raml
+  post:
+
+  /{ID}:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: AmericanFlight
