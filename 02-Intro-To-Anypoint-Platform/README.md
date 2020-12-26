@@ -1,5 +1,9 @@
 # 02 Introducing Anypoint Platform
 
+* **Anypoint Platform** is a unified, hybrid integration platform that creates a seamless **application network** of apps, data and devices with **API-led connectivity**.
+
+All Mule runtimes can be MuleSoft-hosted in the cloud, customer-hosted in the cloud or on-prem hosted.
+
 1 Design Center - 1 Management Center - 1 Runtime
 
 ## Layer Benefits
@@ -82,3 +86,52 @@ API portal contains of:
 * An **automatically generated API endpoint** that uses a **mocking service** to allow the API to be tested without having to implement it
 
 When a RAML 1.0 API specification is added to Exchange, a **connector** is automatically created for it. Connector can be used in Mule applications to make calls to that API.
+
+## Building integration applications and APIs with Design Center
+
+Create a Mule Application - **Flow Designer**
+
+Create an API Specification - **API Designer**
+
+* **Flow Designer** - Web app for building integration apps that connect systems and consume APIs
+* **API Designer** - Web app for designing, documenting and mocking APIs
+* **Anypoint Studio** - Desktop IDE for implementing APIs and building integration applications
+
+Mule apps are built using **Java** using **Spring** framework..
+
+## Mule event structure
+
+> Within the event
+
+* Mule message - the data that passes through flows in the app
+  * Attributes - Metadata contained in the message header
+  * Payload - the core info of the message - the data the app processes
+* Variables - Metadata for the Mule event - can be defined and referenced in the app processing the event
+
+The Mule 4 event data can be modified by using **DataWeave** expression language. JSON-like language built just for data query and data transformation. Fully integrated with Flow Designer and Anypoint Studio. Fully native.
+
+---
+
+## Quiz
+
+1. What is the main purpose of Flow Designer in Design Center?
+
+> To design and develop fully functional Mule applications in a hosted development environment
+
+2. Where does a deployed Flow Designer application run in Anypoint Platform?
+
+> CloudHub worker 
+
+3. What MuleSoft product enables publishing, sharing and searching of APIs?
+
+> Anypoint Exchange
+
+4. What asset can NOT be created using Design Center?
+
+> API Portals
+
+5. A web client submits a `GET` request to a Mule 4 application to the endpoint `/customers?id=48493`. Where is the id stored in the Mule event by the HTTP Listener?
+
+> Attributes
+
+
