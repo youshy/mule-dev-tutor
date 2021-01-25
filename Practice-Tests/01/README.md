@@ -76,7 +76,7 @@ How can childFlow be called using Dataweave?
 
 3. callFlow('childFlow', payload:'{"firstName": "Mule", "lastName": "Soft"}')
 
-4. lookup('childFlow', '{"firstName": "Mule", "lastName": "Soft"}')
+4. **lookup('childFlow', '{"firstName": "Mule", "lastName": "Soft"}')**
 
 # Question 7
 
