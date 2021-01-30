@@ -48,7 +48,7 @@
 * string literals for output e.g. ```Message: #[payload]``` or ```#['\nMessage: ' ++ payload]``` or ```[upper('Goodbye') ++ ' ' ++ attributes.queryParams.fullName as String]```
 
 ## Variables
-* ```Set Variable``` e.g. ``` Name:firstName Value:#[message.atrributes.queryParams,fname]```
+* ```Set Variable``` e.g. ``` Name:firstName Value:#[message.atrributes.queryParams.name]```
 
 then reference ```vars.firstName``` in GET/hello HTTP listener response.
 
