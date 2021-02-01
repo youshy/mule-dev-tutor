@@ -1,5 +1,7 @@
 # Structure
 
+## See hello.jar for example extended from WTs to show Flow reference  vs. VM connector vs. Request
+
 * Multiple flows - sub flows, private flows
     * subflows inherit parent flow error handling and are executed as though processor is in calling flow
     * flow with no event source is 'private flow'
