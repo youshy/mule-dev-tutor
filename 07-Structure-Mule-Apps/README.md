@@ -11,8 +11,8 @@
 * Pass events using asynchronous queues - VM connector implements simple queueing
     * parallelism 
     * communicate with another application in same Mule domain
-    * publish - flow event will not change on return
-    * publish consume - flow event may change on return
+    * publish - calling flow event will not change on return
+    * publish consume - calling flow event may change on return
     * distribute work across cluster
         * Transient queues store data in memory - faster but lose data in event of crash
         * Persistent - slower but more reliable

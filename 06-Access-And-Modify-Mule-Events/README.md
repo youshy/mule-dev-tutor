@@ -1,4 +1,6 @@
 # Visibility of data passing through API
+# Process API to serve multiple airline data
+
 
 ## Debug
 * Run in debug 
@@ -7,9 +9,9 @@
     * Port: 6666 app will stop at breakpoints or error handlers
     * Step through flow - using ARC increase request timeout to allow stepping e.g. 300000 ms
 
-## View event data as it crosses transport boundary between flows. (via http Listener request / response or VM Connector)
+## View event data as it crosses transport boundary between flows
 * Scenario: Hello flow contains GET Request to Goodbye Flow 
-(Request payload = Hello Response payload = Goodbye)
+(payload = Hello)
     * http://localhost:8081/hello?fname=dolly&lname=sheep
     * helloFlow payload is set Hello, at GET/goodbye -> goodbyeFlow
     * payload is set Goodbye, returns -> helloFlow payload still Goodbye
