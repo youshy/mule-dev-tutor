@@ -1,5 +1,7 @@
 # Structure
 
+## See hello.jar for example extended from WTs to show Flow reference  vs. VM connector vs. Request
+
 * Multiple flows - sub flows, private flows
     * subflows inherit parent flow error handling and are executed as though processor is in calling flow
     * flow with no event source is 'private flow'
@@ -9,6 +11,8 @@
 * Pass events using asynchronous queues - VM connector implements simple queueing
     * parallelism 
     * communicate with another application in same Mule domain
+    * publish - calling flow event will not change on return
+    * publish consume - calling flow event may change on return
     * distribute work across cluster
         * Transient queues store data in memory - faster but lose data in event of crash
         * Persistent - slower but more reliable

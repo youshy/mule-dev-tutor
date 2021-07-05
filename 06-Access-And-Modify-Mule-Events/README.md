@@ -1,3 +1,4 @@
+# Visibility of data passing through API
 # Process API to serve multiple airline data
 
 
@@ -16,10 +17,10 @@
     * payload is set Goodbye, returns -> helloFlow payload still Goodbye
     * Response ```200 OK Goodbye```
 
-* GET/hello HTTP Listener > Responses
+* GET/hello HTTP Listener > Response
     * Set Headers e.g. "name" "Dolly", Body payload
     * response now includes ```name: Dolly```
-    * Set response "name" to ``` "attribute.queryParams.fname" ```
+    * Set response "name" to ``` "attributes.queryParams.fname" ```
 
 * GET/goodbye HTTP Listener > Request 
     * Set query parameters Name:"fullName" Value:"Max Mule"
@@ -27,7 +28,8 @@
     * THIS MANDATES query parameters are sent. Response 500 Server Error
     * Set default for fullName in setPayload ```[upper('Goodbye') ++ ' ' ++ attributes.queryParams.fullName default 'Dolly Sheep']```
 
-
+## NOTE Flow references are calling a flow thus attributes, payload and variables are accessible
+   A target variable in flow reference will set the target for return value e.g. flowReference.payload NOT flow.payload
 ## Dataweave
 * expression and transformation language based on JAVA
     * usable from all event processors and global elements
@@ -48,7 +50,7 @@
 * string literals for output e.g. ```Message: #[payload]``` or ```#['\nMessage: ' ++ payload]``` or ```[upper('Goodbye') ++ ' ' ++ attributes.queryParams.fullName as String]```
 
 ## Variables
-* ```Set Variable``` e.g. ``` Name:firstName Value:#[message.atrributes.queryParams,fname]```
+* ```Set Variable``` e.g. ``` Name:firstName Value:#[message.atrributes.queryParams.name]```
 
 then reference ```vars.firstName``` in GET/hello HTTP listener response.
 
